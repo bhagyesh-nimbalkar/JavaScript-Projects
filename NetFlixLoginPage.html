@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login Page</title>
+    <style>
+          *{
+               box-sizing:border-box;
+          }
+           body{
+                 background:url("https://assets.nflxext.com/ffe/siteui/vlv3/893a42ad-6a39-43c2-bbc1-a951ec64ed6d/1d86e0ac-428c-4dfa-9810-5251dbf446f8/IN-en-20231002-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+                 background-repeat:no-repeat;
+                 background-size:cover;
+                 display:flex;
+                 flex-wrap:wrap;
+                 justify-content:center;
+                 align-items:center;
+                 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                 padding:50px 0px;
+           }
+           form{
+                   position:relative;
+                   width:500px;
+                   height:700px;
+                   padding:80px 100px;
+                   background-color:rgba(0,0,0,0.8);
+                   border-radius:10px;
+                   top:50px;
+           }
+           form h1{
+                 color:white;
+                 font-weight:800;
+           }
+           #email{
+                padding:5px 20px;
+                background-color:rgb(49, 48, 48);
+                border-radius:5px;
+                position:relative;
+                height:45px;
+                margin-bottom:50px;
+           }
+           #email:hover{
+                 background-color:rgb(80, 78, 78);
+           }
+           #email:hover label{
+                 transform:translateY(-3px);
+                 font-size:12px;
+           }
+           #email:hover input{
+                visibility:visible;
+           }
+           #email label{
+                   position:absolute;
+                   color:rgb(176, 174, 174);
+                   transform:translateY(10px);
+                   z-index:1;
+                   transition:all 0.2s ease-in-out;
+           }
+           #email input{
+                  background-color:rgba(99, 96, 96, 0);
+                  width:100%;
+                  border:none;
+                  outline:none;
+                  caret-color:white;
+                  font-size:18px;
+                  color:white;
+                  transform:translateY(10px);
+                  visibility:hidden;
+           }
+           #pass{
+                padding:5px 20px;
+                background-color:rgb(49, 48, 48);
+                border-radius:5px;
+                position:relative;
+                height:45px;
+                margin-bottom:50px;
+           }
+           #pass:hover{
+                 background-color:rgb(80, 78, 78);
+           }
+           #pass:hover label{
+                 transform:translateY(-3px);
+                 font-size:12px;
+           }
+           #pass:hover input{
+                visibility:visible;
+           }
+           #pass label{
+                   position:absolute;
+                   color:rgb(176, 174, 174);
+                   transform:translateY(10px);
+                   z-index:1;
+                   transition:all 0.2s ease-in-out;
+           }
+           #pass input{
+                  background-color:rgba(99, 96, 96, 0);
+                  width:100%;
+                  border:none;
+                  outline:none;
+                  caret-color:white;
+                  font-size:18px;
+                  color:white;
+                  transform:translateY(10px);
+                  visibility:hidden;
+           }
+    </style>
+</head>
+<body>
+     <form>
+          <h1>Sign In</h1>
+        <div id="email">
+          <label>Email or Phone Number</label>
+          <input type="text" name="emailorphone">
+        </div>
+        <div id="pass">
+          <label>Password</label>
+          <input type="password">
+        </div>
+     </form>
+</body>
+</html>

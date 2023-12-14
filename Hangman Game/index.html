@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HangMan Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+      <div id="left">
+           <div id="sketch">
+                 <div class="stick a"></div>
+                 <div class="stick b"></div>
+                 <div class="stick c"></div>
+                 <div class="stick d"></div>
+                <div id="hangman">
+                 <div class="circle" id="face"></div>
+                 <div class="d" id="torso"></div>
+                 <div class="e" id="hand1"></div>
+                 <div class="f" id="hand2"></div>
+                 <div class="h" id="leg1"></div>
+                 <div class="i" id="leg2"></div>
+                </div>
+           </div>
+           <h2>HANGMAN GAME</h2>
+      </div>
+      <div id="right">
+         <div id="upper">
+                  <div id="write">
+                    
+                  </div>
+                  <div id="question"></div>
+                  <div id="chances">Chances Remaining:<span id="chance">0/6</span></span></div>
+         </div>
+         <div id="lower">
+               <label style="--i: A" onclick="inp('A')"><span>A</span></label>
+               <label style="--i: B" onclick="inp('B')"><span>B</span></label>
+               <label style="--i: C" onclick="inp('C')"><span>C</span></label>
+               <label style="--i: D" onclick="inp('D')"><span>D</span></label>
+               <label style="--i: E" onclick="inp('E')"><span>E</span></label>
+               <label style="--i: F" onclick="inp('F')"><span>F</span></label>
+               <label style="--i: G" onclick="inp('G')"><span>G</span></label>
+               <label style="--i: H" onclick="inp('H')"><span>H</span></label>
+               <label style="--i: I" onclick="inp('I')"><span>I</span></label>
+               <label style="--i: J" onclick="inp('J')"><span>J</span></label>
+               <label style="--i: K" onclick="inp('K')"><span>K</span></label>
+               <label style="--i: L" onclick="inp('L')"><span>L</span></label>
+               <label style="--i: M" onclick="inp('M')"><span>M</span></label>
+               <label style="--i: N" onclick="inp('N')"><span>N</span></label>
+               <label style="--i: O" onclick="inp('O')"><span>O</span></label>
+               <label style="--i: P" onclick="inp('P')"><span>P</span></label>
+               <label style="--i: Q" onclick="inp('Q')"><span>Q</span></label>
+               <label style="--i: R" onclick="inp('R')"><span>R</span></label>
+               <label style="--i: S" onclick="inp('S')"><span>S</span></label>
+               <label style="--i: T" onclick="inp('T')"><span>T</span></label>
+               <label style="--i: U" onclick="inp('U')"><span>U</span></label>
+               <label style="--i: V" onclick="inp('V')"><span>V</span></label>
+               <label style="--i: W" onclick="inp('W')"><span>W</span></label>
+               <label style="--i: X" onclick="inp('X')"><span>X</span></label>
+               <label style="--i: Y" onclick="inp('Y')"><span>Y</span></label>
+               <label style="--i: Z" onclick="inp('Z')"><span>Z</span></label>
+         </div>
+      </div>
+      <div id="model">
+       <div id="modelimg">
+         <img src="" id="resimg">
+       </div>
+         <h2 id="reshead">  </h2>
+         <p id="resmsg"></p>
+         <button onclick="location.reload()"> PLAY AGAIN</button>
+      </div>
+    </div>
+  <script src="index.js"></script>
+</body>
+</html>

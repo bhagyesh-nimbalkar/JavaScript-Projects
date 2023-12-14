@@ -1,0 +1,236 @@
+:root{
+      --white:rgba(250, 239, 230, 0.973);
+      --blue:rgb(13, 95, 203);
+      --black:rgba(0,0,0,0.8);
+      --pink:rgba(211, 72, 216,0.9);
+      --darkpink:rgba(173, 56, 177, 0.9);
+}
+*{
+        box-sizing:border-box;
+}
+body
+{
+      background:linear-gradient(to top right,rgb(21, 158, 200)30%,rgb(46, 118, 189)50%);
+      background-repeat:no-repeat;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+}
+#container{
+          width:100%;
+          background-color:var(--white);
+          border-radius:20px;
+          box-shadow:0px 0px 25px rgba(128, 127, 127, 0.6),0px 0px 50px rgba(116, 112, 112, 0.4);
+          display:flex;
+          flex-wrap:wrap;
+          margin:0px 10%;
+          gap:5%;
+          #model{
+                 visibility:hidden;
+                 position:absolute;
+                 width:800px;
+                 height:fit-content;
+                 display:flex;
+                 margin:0px 15%;
+                 flex-wrap:wrap;
+                 justify-content:center;
+                 padding:30px;
+                 box-shadow:0px 0px 30px rgba(0,0,0,0.6);
+                 border-radius:20px;
+                 background-color:white;
+             #modelimg{
+                 width:100%;
+                 text-align:center;
+                 img{
+                       width:150px;
+                       height:120px;
+                 }
+            }
+                 h2{
+                     font-size:30px;
+                     width:100%;
+                     text-align:center;
+                 }
+                 p{
+                       width:100%;
+                       text-align:center;
+                       font-size:25px;
+                       font-weight:500;
+                 }
+                 button{
+                       padding:10px;
+                       background-color:rgb(39, 149, 223);
+                       color:white;
+                       border-radius:15px;
+                       border:none;
+                       cursor:pointer;
+                       font-size:20px;
+                       font-weight:900;
+                 }
+          }
+          #left{
+                display:flex;
+                flex-wrap:wrap;
+                width:30%;
+                height:fit-content;
+                justify-content:center;
+                padding:30px;
+                align-self:center;
+            #sketch{
+                width:100%;
+                height:100%;
+                display:flex;
+                flex-wrap:wrap;
+                 .stick{
+                     width:250px;
+                     height:2px;
+                     background-color:black;
+                     position:relative;
+                }
+                .a{
+                      width:4px;
+                      height:250px;
+                      left:20px;
+                }
+                .b{
+                      width:2px;
+                      height:45px;
+                      left:48%;
+                }
+                .c{
+                    width:200px;
+                }
+                #hangman{
+                       position:absolute;
+                       .circle{
+                             width:40px;
+                             height:40px;
+                             background-color:transparent;
+                             border:4px solid black;
+                             border-radius:50%;
+                             position:absolute;
+                             left:128px;
+                             top:45px;
+                             display:none;
+                       }  
+                       .d{
+                          width:4px;
+                          height:80px;
+                          background-color:black;
+                          position:absolute;
+                          left:146px;
+                          top:85px;
+                          border-radius:10px;
+                          display:none;
+                       }
+                       .e{
+                           @extend .d;
+                           height:30px;
+                           transform:rotate(45deg);
+                           transform-origin:top;
+                           display:none;
+                       }
+                       .f{
+                          @extend .e;
+                          transform:rotate(-45deg);
+                          display:none;
+                       }
+                       .h{
+                           @extend .e;
+                           top:150px;
+                          display:none;
+                       }
+                       .i{
+                           @extend .h;
+                           transform:rotate(-45deg);
+                           display:none;
+                       }
+                }
+            }
+            h2{
+                   text-align:center;
+            }
+          }
+          #right{
+               width:60%;
+               height:fit-content;
+               display:flex;
+               flex-wrap:wrap;
+               #upper{
+                     width:100%;
+                     height:fit-content;
+                     display:flex;
+                     flex-direction:column;
+                     flex-wrap:wrap;
+                     align-items:space-evenly;
+                     gap:10%;
+                     justify-content:center;
+                     #write{
+                           display:flex;
+                           flex-wrap:wrap;
+                           justify-content:center;
+                           padding:10px;
+                           width: 100%;
+                           gap:3%;
+                           align-items:center;
+                           justify-content:center;
+                           span{
+                                 width:50px;
+                                 height:50px;
+                                 border:0.5px solid black;
+                                 padding:10px;
+                                 font-size:25px;
+                                 text-align:center;
+                                 border-radius:5px;
+                                 margin-bottom:15px;
+                           }
+                     }
+                     #question{
+                         display:flex;
+                         font-size:30px;
+                         font-weight:700;
+                         justify-content:center;
+                     }
+                     #chances{
+                            display:flex;
+                            justify-content:center;
+                            padding:20px;
+                            font-size:20px;
+                            font-weight:800;
+                            span{
+                                  color:red;
+                                  margin-left:10px;
+                            }
+                     }
+
+               }
+               #lower{
+                     width:100%;
+                     flex-wrap:wrap;
+                     height:fit-content;
+                     display:flex;
+                     align-items:flex-end;
+                     justify-content:center;
+                     gap:1%;
+                     margin-bottom:20px;
+                       label{
+                             width:10%;
+                             padding:10px;
+                             border-radius:10px;
+                             margin-bottom:20px;
+                             text-align:center;
+                             font-weight:900;
+                             color:var(--white);
+                             background-color:var(--pink);
+                             transition:all 0.1s ease-in-out;
+                             cursor:pointer;
+                             &:hover{
+                                 background-color:var(--darkpink);
+                                 transform:scale(0.97);
+                             }
+                       }
+               }
+          }
+}

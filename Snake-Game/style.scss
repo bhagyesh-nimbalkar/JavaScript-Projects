@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+     padding:0;
+     margin:0;
+     box-sizing:border-box;
+     font-family:"Press Start 2P",sans-serif;
+}
+body{
+      width:100vw;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      display:flex;
+      flex-direction:column;
+      background-color:rgba(0,0,0,0.9);
+      gap:10%;
+}
+h1{
+        color:white;
+        text-align:center;
+        font-size:50px;
+        outline:10px dashed white;
+        outline-offset:30px;
+        transition:all 0.5s ease;
+        transform:scale(0);
+        animation:appear 1s 1 ease forwards;
+}
+h2{
+        position:absolute;
+        color:white;
+        text-align:center;
+        font-size:50px;
+        outline:10px dashed white;
+        outline-offset:30px;
+        transition:all 0.5s ease;
+        transform:scale(0);
+        animation:appear 1s 1 ease forwards;  
+}
+@keyframes appear{
+       100%{
+            transform:scale(1);
+       }
+}
+#container{
+      width:500px;
+      height:550px;
+      display:flex;
+      flex-direction:column;
+      gap:2%;
+}
+#stats{
+       width:100%;
+       height:10%;
+       transform:scale(0);
+       animation:appear 1s 1 ease forwards;
+       display:flex;
+       flex-wrap:wrap;
+       .score{
+             color:white;
+             width:50%;
+       }
+       .h-score{
+            @extend .score;
+            text-align:right;
+
+       }
+}
+#board{
+      width:100%;
+      height:90%;
+      border-radius:5px;
+      background-color:rgb(40, 47, 51);
+      display:grid;
+      transform:scale(0);
+      grid-template-rows:repeat(30,1fr);
+      grid-template-columns:repeat(30,1fr);
+      animation:appear 1s 1 ease forwards;
+}
+.head{
+       background-color:skyblue;
+       color:skyblue;
+}
+.food{
+     background-color:red;
+     animation:blink .2s infinite ease;
+
+}
+.active{
+       display:none;
+       visibility:hidden;
+}
+.face{
+        color:skyblue;
+        text-align:center;
+}
+@keyframes blink{
+        100%{
+             transform:scale(0.80);
+        }
+}

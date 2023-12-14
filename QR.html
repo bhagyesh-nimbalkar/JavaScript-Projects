@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <img src="" alt="QR Code" id="qr" width="100" height="100">
+    <script>
+        const img = document.querySelector("#qr");
+        let str = prompt("Enter the URL");
+        img.src=`https://api.qrserver.com/v1/create-qr-code/?data=${str}&amp;size=30x30`;
+    </script>
+</body>
+</html>

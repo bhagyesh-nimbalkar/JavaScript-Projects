@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition Effect</title>
+    <style>
+          *{
+             margin:0;
+             padding:0;
+             box-sizing:border-box;
+          }
+          body{
+                 width:100vw;
+                 height:100vh;
+                 display:flex;
+                 justify-content:center;
+                 align-items:center;
+          }
+          #container{
+                width:300px;
+                height:150px;
+                box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+                border-radius:10px;
+                display:flex;
+                flex-direction:row;
+                justify-content:space-between;
+                align-items:center;
+          }
+          .box{
+               width:100px;
+               height:100%;
+               background-color:brown;
+               transition:all 0.5s ease-in-out;
+               
+          }
+          .sub{
+                border-radius:0% 30% 30% 0;
+          }
+          .main{
+               display:flex;
+               justify-content:center;
+               align-items:center;
+               background-color:blueviolet;
+               border-radius:30% 0% 0% 30%;
+          }
+          .btn{
+                padding:4px;
+                background-color:transparent;
+                outline:none;
+                text-transform:uppercase;
+                border:1px solid white;
+                color:white;
+                cursor:pointer;
+          }
+          .btn:active{
+                transform:scale(0.97);
+          }
+          .active{
+              animation:strech 0.5s 1 ease-in-out;
+              transform:translateX(-200%);
+              border-radius:0% 30% 30% 0;
+          }
+          .active2{
+            border-radius:30% 0% 0% 30%;
+            animation:strech 0.5s 1 ease-in-out;
+             transform:translateX(200%);
+          }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box sub"></div>
+        <div class="box main">
+             <button type="button" class="btn">click here</button>
+        </div>
+    </div>
+    <script>
+         const box = document.querySelector('.main');
+         const box2 = document.querySelector('.sub');
+         const btn = document.querySelector('.btn');
+         let flag=0;
+         btn.addEventListener('click',()=>{
+              box.classList.toggle("active");
+              box2.classList.toggle("active2");
+         });
+    </script>
+</body>
+</html>

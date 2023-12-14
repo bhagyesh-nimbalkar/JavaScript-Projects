@@ -1,0 +1,3 @@
+exports.showTime = ()=>{
+     return Date();
+}

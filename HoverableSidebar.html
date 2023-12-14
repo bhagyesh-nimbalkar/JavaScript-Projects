@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoverable Sidebar</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+          :root{
+              --white:white;
+              --black:black;
+              --lightblack:rgba(0,0,0,0.7);
+              --grey:grey;
+              --blue:rgb(76, 145, 234);
+              --lightblue:rgb(230, 244, 250);
+          }
+          *{
+              box-sizing:border-box;
+          }
+          body{
+               margin:0;
+               background-color:var(--lightblue);
+               font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          }
+          aside{
+                 position:fixed;
+                 width:5%;
+                 height:100%;
+                 float:left;
+                 box-shadow:0px 0px 1px var(--grey);
+                 background-color:var(--white);
+                 transition:all 0.2s ease-in-out;
+          }
+          aside:hover{ 
+                width:20%;
+          }
+          aside:hover #container #logo h2{
+              opacity:1;
+              position:relative;
+          }
+          aside:hover #container #logo i{
+              display:block;
+          }
+          aside:hover #first #header {
+               display:block;
+          }
+          aside:hover #first #list .item a{
+              display:block;
+          }
+          aside:hover footer #profile{
+               width:20%;
+          }
+          aside:hover footer #person h2
+          {
+                display:block;
+          }
+          #container{
+                 width:100%;
+                 height:100%;
+                 padding:10px;
+          }
+          #container #logo{
+                 width:100%;
+                 display:flex;
+                 flex-wrap:wrap;
+                 justify-content:flex-start;
+                 align-items:center;
+                 gap:3%;
+          }
+          #container #logo img{
+                    width:60px;
+                    height:30px;
+          }
+          #container #logo h2{
+                opacity:0;
+                position:absolute;
+                width:50%;
+                font-size:30px;
+                color:var(--lightblack);
+          }
+          #container #logo i{
+                display:none;
+                font-size:25px;
+                cursor:pointer;
+                justify-self:flex-end;
+                transition:all 0.2s ease-in-out;
+          }
+          #container #logo i:hover{
+                 color:var(--blue);
+          }
+          #first{
+                 display:flex;
+                 flex-wrap:wrap;
+                 width:100%;
+                 padding:10px;
+          }
+          #first #header{
+                 display:none;
+                 font-size:20px;
+                 color:var(--lightblack);
+                 font-weight:550;
+          }
+          #first #list{
+                 display:flex;
+                 flex-wrap:wrap;
+                 padding:20px 0px;
+          }
+          #first #list .item:hover{
+                background-color:var(--blue);
+          }
+          #first #list .item:hover a{
+                 color:var(--white);
+          }
+          #first #list .item:hover i{
+                 color:var(--white);
+          }
+        #first #list .item{
+               width:100%;
+               padding:15px 10px;
+               border-radius:10px;
+               display:flex;
+               flex-wrap:wrap;
+               gap:10%;
+        }
+        #first #list .item a{
+               display:none;
+               text-decoration:none;
+               color:var(--grey);
+               font-size:18px;
+               text-align:center;
+               transition:all 0.2s ease-in-out;
+        }
+        #first #list .item i{ 
+              font-size:23px;
+        }
+        #subsec{
+              width:100%;
+              height:100%;
+              overflow:scroll;
+        }
+        #subsec::-webkit-scrollbar{
+              display:none;
+        }
+        footer{
+              display:flex;
+              flex-wrap:wrap;
+              margin-bottom:100px;
+              justify-content:center;
+
+              width:100%;
+              height:15%;
+              gap:0%;
+        }
+        footer hr{
+               width:90%;
+               height:2px;
+        }
+        footer #profile{
+               width:100%;
+               border-radius:50%;
+               display:flex;
+               flex-wrap:wrap;
+               align-items:center;
+               justify-content:center;
+               cursor:pointer;
+               transition:all 0.2s ease-in-out;
+        }
+        footer #profile img{
+               width:40px;
+               height:40px;
+        }
+        footer #person{
+               width:50%;
+               display:flex;
+               flex-wrap:wrap;
+               cursor:pointer;
+               align-items:flex-start;
+               align-content:start;
+        } 
+        footer #person h2{
+              display:none;
+              font-size:18px;
+              width:100%;
+              transition:all 0.2s ease-in-out;
+        }
+        footer #person h2>p{
+              align-self:flex-start;
+              width:100%;
+              font-size:15px;
+              font-weight:300;
+        }
+    </style>
+</head>
+<body>
+     <aside>
+          <div id="container">
+                    <div id="logo">
+                         <img src="https://1000logos.net/wp-content/uploads/2022/07/Logo-ATT.png">
+                         <h2>Coding</h2>
+                         <i class='bx bx-lock-alt'></i>
+                    </div>
+                <div id="subsec">
+                    <section id="first">
+                           <div id="header">Dashboard</div>
+                           <div id="list">
+                             <div class="item">
+                                <i class='bx bx-home-alt'></i>
+                               <a href="">Overview</a>
+                             </div>
+                             <div class="item">
+                                <i class='bx bx-grid-alt' ></i>
+                               <a href="">All Projects</a>
+                             </div>
+                           </div>
+                    </section>
+                    <section id="first">
+                        <div id="header">Editor</div>
+                        <div id="list">
+                          <div class="item">
+                            <i class='bx bxs-magic-wand'></i>
+                            <a href="">Magic Build</a>
+                          </div>
+                          <div class="item">
+                            <i class='bx bx-folder' ></i>
+                            <a href="">New Projects</a>
+                          </div>
+                          <div class="item">
+                            <i class='bx bx-cloud-upload' ></i>
+                           <a href="">Upload New</a>
+                         </div>
+                        </div>
+                 </section>
+                 <section id="first">
+                    <div id="header">Setting</div>
+                    <div id="list">
+                      <div class="item">
+                        <i class='bx bx-flag' ></i>
+                        <a href="">Notice Board</a>
+                      </div>
+                      <div class="item">
+                        <i class='bx bx-award' ></i>
+                        <a href="">Award</a>
+                      </div>
+                      <div class="item">
+                        <i class='bx bx-cog' ></i>
+                       <a href="">Setting</a>
+                     </div>
+                    </div>
+             </section>
+             <footer>
+                   <hr>
+                   <div id="profile">
+                   <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                   </div>
+                   <div id="person">
+                        <h2>David Olivia
+                            <p>david@gmail.com</p>
+                        </h2>
+                   </div>
+             </footer>
+         </div>
+          </div>
+     </aside>
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

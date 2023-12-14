@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Toast</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+           body{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+           }
+           #container{
+                 display:flex;
+                 justify-content:center;
+                 align-items:center;
+                 width:100%;
+                 height:100vh;
+                 flex-wrap:wrap;
+           }
+           #btns{
+                   width:100%;
+                   display:flex;
+                   flex-wrap:wrap;
+                   justify-content:center;
+                   gap:5%;
+           }
+           #btns .ibtn{ 
+                     padding:15px;
+                     text-decoration:none;
+                     color:black;
+                     font-weight:500;
+                     font-size:20px;
+                     border-radius:5px;
+                     color:white;
+                     box-shadow:0px 10px 5px grey;
+                     transition:all 0.01s ease;
+                     border:none;
+                     outline:none;
+                     cursor:pointer;
+           }
+        .green{
+                  background-color:rgb(38, 153, 38);
+         }
+         .red{
+                 background-color:rgb(217, 31, 31);
+         }
+         .blue{
+                background-color:rgb(41, 154, 225);
+         }
+         .yellow{
+               background-color:rgb(225, 225, 74);
+         }
+         .model{
+                 position:relative;
+                 display:flex;
+                 flex-wrap:wrap;
+                 width:65%;
+                 height:30px;
+                 border-radius:5px;
+                 box-shadow:0px 0px 5px grey;
+                 padding:20px;
+                 justify-content:center;
+                 align-items:center;
+                 margin-bottom:30px;
+                 transition:all 0.2s ease;
+                 transform:translateX(500px);
+         }
+         .model i{
+               font-size:30px;
+               width:20%;
+               color:rgb(225, 225, 74);
+         }
+         .model div{
+               width:70%;
+               font-size:20px;
+               font-weight:600;
+         }
+         .model button{
+               border:none;
+               outline:none;
+               background-color:white;
+               font-size:30px;
+               font-weight:900;
+               color:red;
+               cursor:pointer;
+         }
+         .model span{
+               content:"";
+               position:absolute;
+               width:340px;
+               bottom:0;
+               height:5px;
+               background-color:red;
+               left:0;
+               transform-origin:left;
+         }
+         #mo-container{
+                  position:fixed;
+                  right:0;
+                  top:0;
+                  width:30%;
+                  height:100%;
+                  display:flex;
+                  justify-content:center;
+                  flex-wrap:wrap;
+                  align-content:baseline;
+         }
+    </style>
+</head>
+<body>
+    <div id="container">
+          <div id="btns">
+               <button class="ibtn green" >Success</button>
+               <button class="ibtn red" >Error</button>
+               <button class="ibtn yellow" >Warning</button>
+               <abutton class="ibtn blue" >Info</button>
+          </div>
+        <div id="mo-container">
+        </div>
+        </div>
+    </div>
+    <script>
+             const btn = document.querySelectorAll(".ibtn");
+             const container = document.querySelector("#mo-container");
+             for(let i=0;i<btn.length;i++)
+             {
+                   btn[i].addEventListener('click',()=>{
+                         btn[i].style.transform="scale(0.97)";
+                         setTimeout(()=>{btn[i].style.transform="scale(1)";},50);
+                         let ic="",msg="",cl="",iccl="";
+                         if(i==0)
+                         {
+                                ic="error";
+                                msg="This is Success Alert.";
+                                cl="rgb(38, 153, 38)";
+                                iccl="rgb(38, 153, 38)";
+                         }
+                         else if(i==1)
+                         {
+                                ic="error";
+                                msg="This is Red Alert.";
+                                cl="rgb(217, 31, 31)"; 
+                                iccl="rgb(217, 31, 31)";
+                         }
+                         else if(i==2)
+                         {
+                                ic="error";
+                                msg="This is Warning Alert.";
+                                cl="rgb(225, 225, 74)"; 
+                                iccl="rgb(225, 225, 74)";
+                         }
+                         else 
+                         {
+                                
+                                ic="error";
+                                msg="This is Information Alert.";
+                                cl="rgb(41, 154, 225)"; 
+                                iccl="rgb(41, 154, 225)";
+                         }
+                         create(ic,msg,cl,iccl);
+                   });
+             }
+             function create(ic,msg,cl,iccl)
+             {
+                  container.innerHTML += `<div class="model">
+                              <i class='bx bx-${ic}'></i> <div>${msg}</div><button onclick="cl(this)">&times;</button>
+                              <span></span>
+                        </div>`;
+                        const mo = document.querySelector(".model");
+                        const model = document.querySelector(".model span");
+                        const iccolor = document.querySelector(".model i");
+                        model.style.backgroundColor=`${cl}`;
+                        iccolor.style.color=`${iccl}`;
+                        setTimeout(()=>{ mo.style.transform="translateX(-40px)";},200);
+                         setTimeout(()=>{ mo.style.transform="translateX(0px)";},400);
+                         let t = setInterval(()=>{
+                              let len = model.offsetWidth;
+                              if(len==0)
+                              {
+                                     clearInterval(t);
+                              }
+                              console.log(len);
+                              model.style.width=len-1+"px";
+                         },14);
+                         setTimeout(()=>{mo.style.transform="translateX(-40px)";},4900);
+                         setTimeout(()=>{mo.style.transform="translateX(500px)";},5100);
+                         setTimeout(()=>{mo.style.display="none"},5300);
+             }
+             function cl(x)
+             {
+                   mo.style.display="none";
+             }
+    </script>
+</body>
+</html>

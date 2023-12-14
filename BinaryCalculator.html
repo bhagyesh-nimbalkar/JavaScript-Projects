@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Calculaor</title>
+    <style>
+          body{
+              width:33%;
+          }
+          #res{
+              background-color:lightgrey;
+              height:48px;
+              border:3px solid black;
+              font-size:20px;
+              margin:0;
+              padding:0;
+              width:99%;
+              text-align:left;
+              overflow-x:scroll;
+          }
+          #btn0,#btn1{
+                background-color:lightgreen;
+                color:brown;
+          }
+          #btnClr,#btnEql{
+                background-color:darkgreen;
+                color:white;
+          }
+          #btnSum,#btnSub,#btnMul,#btnDiv{
+               background-color:black;
+               color:red;
+          }
+          #btn0,#btn1,#btnClr,#btnEql,#btnSum,#btnSub,#btnMul,#btnDiv{
+               width:25%;
+               height:36px;
+               font-size:18px;
+               margin:0;
+               float:left;
+               border:none;
+               outline:none;
+          }
+    </style>
+</head>
+<body>
+    <input type="text" id="res" value="">
+    <div id="btns">
+            <button id="btn0" onclick="enter(this)">0</button>
+            <button id="btn1" onclick="enter(this)">1</button>
+            <button id="btnClr" onclick="clr()">C</button>
+            <button id="btnEql" onclick="res(this)">=</button>
+            <button id="btnSum" onclick="enter(this)">+</button>
+            <button id="btnSub" onclick="enter(this)">-</button>
+            <button id="btnMul" onclick="enter(this)">*</button>
+            <button id="btnDiv" onclick="enter(this)">/</button>
+    </div>
+    <script>
+           let txt = document.getElementById("res");
+           function bintodec(x)
+           {
+                let num = 0,k=0;
+                for(let i=x.length-1;i>=0;i--)
+                {
+                       if(x[i]=='1')
+                       {
+                           num += 2**k;
+                       }
+                       k++;
+                }
+                return num;
+           }
+           function dectobin(x)
+           {
+               let str="";
+                  while(x)
+                  {
+                       str=parseInt(x%2).toString()+str;
+                       x=parseInt(x/2);
+                  }
+                  console.log(str);
+                 
+                return str;
+           }
+           function enter(x)
+           {
+               let inp = txt.value.toString();
+               txt.value = inp+x.innerHTML.toString();
+           }
+           function clr()
+           {
+                txt.value="";
+           }
+           function res(x)
+           {
+                 let inp = txt.value.toString();
+                 let temp = "";
+                 let num1=0,num2=0,op="";
+                 for(let i=0;i<inp.length;i++)
+                 {
+                      if(inp[i]=='+' || inp[i]=='-' || inp[i]=='*' || inp[i]=='/')
+                  
+                      {
+                            num1=bintodec(temp);
+                            op=inp[i];
+                            temp="";
+                      }
+                      else 
+                        temp+=inp[i];
+                 }
+                 num2 = bintodec(temp);
+                 if(num2=="") {
+                    txt.value = inp;
+                    return;
+                 }
+                 let res=0;
+                 switch(op)
+                 {
+                     case '+':
+                     {
+                         res=num1+num2;
+                         break;
+                     }
+                     case '-':
+                         {
+                             res = num1-num2;
+                             break;
+                         }
+                    case '*':
+                        {
+                              res = num1*num2;
+                              break;
+                        }
+                    case '/':
+                        {
+                             res = num1/num2;
+                             break;
+                        }
+                 }
+                 txt.value=dectobin(res).toString();
+           }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+         <div id="wrapper">
+             <div id="upper">
+                 <div id="header">
+                      <h2>Playable Piano</h2>
+                 </div>
+                 <div id="volume">
+                    <span>Volume</span>
+                    <input type="range" min="0" max="1" value="0.5" step="any">
+                 </div>
+                 <div id="toggle">
+                    <span>Show Keys</span>
+                    <span class="btn"><span id="ball"></span>
+                </span>
+                 </div>
+             </div>
+             <div id="lower">
+              <ul id="keys">
+                <li class=" key white" data-key="a"><span class="change">A</span></li>
+                <li class=" key black" data-key="w"><span class="change">W</span></li>
+                <li class=" key white" data-key="s"><span class="change">S</span></li>
+                <li class=" key black" data-key="e"><span class="change">E</span></li>
+                <li class=" key white" data-key="d"><span class="change">D</span></li>
+                <li class=" key white" data-key="f"><span class="change">F</span></li>
+                <li class=" key black" data-key="t"><span class="change">T</span></li>
+                <li class=" key white" data-key="g"><span class="change">G</span></li>
+                <li class=" key black" data-key="y"><span class="change">Y</span></li>
+                <li class=" key white" data-key="h"><span class="change">H</span></li>
+                <li class=" key black" data-key="u"><span class="change">U</span></li>
+                <li class=" key white" data-key="j"><span class="change">J</span></li>
+                <li class=" key white" data-key="k"><span class="change">K</span></li>
+                <li class=" key black" data-key="o"><span class="change">O</span></li>
+                <li class=" key white" data-key="l"><span class="change">L</span></li>
+                <li class=" key black" data-key="p"><span class="change">P</span></li>
+                <li class=" key white" data-key=";"><span class="change">;</span></li>
+             </ul>
+             </div>
+         </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

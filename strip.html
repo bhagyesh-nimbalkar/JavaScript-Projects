@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+          #strip{
+                width:100px;
+                height:5px;
+                background-color:black;
+                position:absolute;
+                left:50%;
+                top:50%;
+                animation:ro 1s infinite ease-in-out;
+                transform-origin:left;
+          }
+          @keyframes ro{
+               100%{
+                   transform:rotate(360deg);
+               }
+          }
+    </style>
+</head>
+<body>
+    <div id="strip">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 36</title>
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+         *{
+                  box-sizing:border-box;
+         }
+          #container{
+                  display:flex;
+                  justify-content:center;
+                  align-items:center;
+                  height:100vh;
+          }
+          #sub-container{
+                  width:400px;
+                  height:400px;
+                  background:linear-gradient(to top right,rgb(54, 72, 90),rgb(58, 73, 89));
+                  border-radius:5px;
+                  display:flex;
+                  justify-content:center;
+                  align-items:center;
+          }
+          #model{
+                  width:350px;
+                  height:250px;
+                  box-shadow:0px 2px 10px rgb(30, 31, 31);
+                  display:flex;
+                  flex-wrap:wrap;
+          }
+          #model #tabs{ 
+                  width:100%;
+                  background-color:rgb(57, 73, 80);
+                  color:white;
+                  display:flex;
+                  flex-wrap:wrap;
+                  height:15%;
+                  margin:0;
+                  padding:0;
+          }
+          #model .tab{
+                   width:10%;
+                   height:100%;
+                   margin:0;
+                   padding:0;
+                   padding:10px;
+                   cursor:pointer;
+                   transition:all 0.5s ease;
+          }
+          #model .tab{
+                  color:rgba(255,255,255,0.5);
+          }
+          #model .tab:hover{
+                  color:rgba(255,255,255,1);
+          }
+          #model #sub-model{
+                   width:100%;
+                   background-color:white;
+                   height:85%;
+                   margin:0;
+                   padding:0;
+                   padding:0px 20px;
+          }
+          .active{
+                color:rgba(255,255,255,1) !important;
+                background-color:rgb(33, 151, 241);
+          }
+          #sub-model p{
+                   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                   font-size:20px;
+                   font-weight:100;
+                   opacity:0.6;
+          }
+          #sub-model #skeleton{
+                  width:100%;
+                  transition:all 0.5s ease-in-out;
+          }
+          #sub-model #lower{
+                  display:flex;
+                  flex-wrap:wrap;
+                  flex-direction:column;
+                   width:100%;
+                   margin-bottom:20px;
+          }
+          #lower span{  
+                   width:100%;
+                   height:5px;
+                   background-color:rgb(235, 232, 232);
+                   margin-bottom:5px;
+          }
+          #lower span:nth-child(1)
+          { 
+                  width:90%;
+          }
+          #lower span:nth-child(3)
+          {
+                  width:80%;
+          }
+          #lower span:nth-child(4)
+          {
+                  width:95%;
+          }
+          #lower span:nth-child(5)
+          {
+                  width:20%;
+          }
+          #sub-model #upper{
+                  display:flex;
+                  flex-wrap:wrap;
+                  flex-direction:column;
+                   width:100%;
+                   margin-bottom:20px;
+          }
+          #upper span{  
+                   width:100%;
+                   height:5px;
+                   background-color:rgb(235, 232, 232);
+                   margin-bottom:5px;
+          }
+          #upper span:nth-child(2)
+          {
+                  width:80%;
+          }
+          #upper span:nth-child(3)
+          {
+                  width:90%;
+          }
+          #upper span:nth-child(5)
+          {
+                  width:50%;
+          }
+    </style>
+</head>
+<body>
+     <div id="container">
+        <div id="sub-container">
+            <div id="model">
+                   <div id="tabs">
+                        <i class="tab fa-solid fa-eye active" id="dash"></i>
+                        <i class="tab fa-regular fa-message" id="comment"></i>
+                        <i class="tab fa-solid fa-bell" id="notify"></i>
+                        <i class="tab fa-solid fa-gear" id="setting"></i>
+                        <div class="tab" style="position:relative;left:170px;">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                   </div>
+                   <div id="sub-model">
+                   <div id="skeleton">
+                      <p>Dashboard</p>
+                          <div id="lower">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                          <div id="upper">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+            </div>
+     </div>
+     <script>
+         let dash = document.getElementById("dash");
+         let comm = document.getElementById("comment");
+         let setting = document.getElementById("setting");
+         let notify = document.getElementById("notify");
+         let model = document.querySelector("#skeleton");
+         let bo = document.querySelector("#skeleton p");
+         dash.addEventListener('click',()=>{
+                 const  lst = dash.classList.value;
+                 if(lst.includes("active"))
+                 {
+                         return;
+                 }
+                 const arr = document.querySelectorAll(".tab");
+                 for(let i=0;i<arr.length;i++)
+                 {
+                          if(arr[i].classList.value.includes("active"))
+                          {
+                                  arr[i].classList.remove("active");
+                                  break;
+                          }
+                 }
+                 dash.classList.add("active");
+                 setTimeout(()=>{model.style.transform="translateY(3px)";model.style.opacity="0";},100);
+                 setTimeout(()=>{bo.innerHTML = "Dashboard";},400);
+                 setTimeout(()=>{model.style.transform="translateY(0px)";model.style.opacity="1";},450);
+         });
+         comm.addEventListener('click',()=>{
+                 const  lst = comm.classList.value;
+                 if(lst.includes("active"))
+                 {
+                         return;
+                 }
+                 const arr = document.querySelectorAll(".tab");
+                 for(let i=0;i<arr.length;i++)
+                 {
+                          if(arr[i].classList.value.includes("active"))
+                          {
+                                  arr[i].classList.remove("active");
+                                  break;
+                          }
+                 }
+                 comm.classList.add("active");
+                 setTimeout(()=>{model.style.transform="translateY(3px)";model.style.opacity="0";},100);
+                 setTimeout(()=>{bo.innerHTML = "Comments";},400);
+                 setTimeout(()=>{model.style.transform="translateY(0px)";model.style.opacity="1";},450);
+         });
+         setting.addEventListener('click',()=>{
+                 const  lst = setting.classList.value;
+                 if(lst.includes("active"))
+                 {
+                         return;
+                 }
+                 const arr = document.querySelectorAll(".tab");
+                 for(let i=0;i<arr.length;i++)
+                 {
+                          if(arr[i].classList.value.includes("active"))
+                          {
+                                  arr[i].classList.remove("active");
+                                  break;
+                          }
+                 }
+                 setting.classList.add("active");
+                 setTimeout(()=>{model.style.transform="translateY(3px)";model.style.opacity="0";},100);
+                 setTimeout(()=>{bo.innerHTML = "Setting";},400);
+                 setTimeout(()=>{model.style.transform="translateY(0px)";model.style.opacity="1";},450);
+         });
+         notify.addEventListener('click',()=>{
+                 const  lst = notify.classList.value;
+                 if(lst.includes("active"))
+                 {
+                         return;
+                 }
+                 const arr = document.querySelectorAll(".tab");
+                 for(let i=0;i<arr.length;i++)
+                 {
+                          if(arr[i].classList.value.includes("active"))
+                          {
+                                  arr[i].classList.remove("active");
+                                  break;
+                          }
+                 }
+                 notify.classList.add("active");
+                 setTimeout(()=>{model.style.transform="translateY(3px)";model.style.opacity="0";},100);
+                 setTimeout(()=>{bo.innerHTML = "Notifications";},400);
+                 setTimeout(()=>{model.style.transform="translateY(0px)";model.style.opacity="1";},450);
+         });
+     </script>
+</body>
+</html>

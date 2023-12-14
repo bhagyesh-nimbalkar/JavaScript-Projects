@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(228, 246, 253);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+
+#container {
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: white;
+  border-radius: 15px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 35px 30px;
+}
+#container h2 {
+  text-align: left;
+  width: 100%;
+  color: rgb(33, 35, 35);
+}
+#container #main {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  gap: 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+#container #main #left {
+  width: 40%;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+}
+#container #main #left .first {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#container #main #left .first div > h4 {
+  margin-bottom: 10px;
+}
+#container #main #left .first div > h5 {
+  font-weight: 500;
+  color: rgb(43, 44, 46);
+}
+#container #main #left .first #box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+}
+#container #main #left .first #box div {
+  padding: 15px 8px;
+  border: 1px solid rgb(158, 176, 193);
+  text-align: center;
+  color: rgb(145, 150, 155);
+  border-radius: 10px;
+  cursor: pointer;
+}
+#container #main #left .first #box div.selected {
+  color: white;
+  background-color: rgb(43, 115, 191);
+  font-weight: 600;
+}
+#container #main #left .first input {
+  width: 100%;
+  cursor: pointer;
+}
+#container #main #left .first .break {
+  display: flex;
+  justify-content: space-between;
+}
+#container #main #left .first .gap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#container #main #left .first .icn {
+  display: flex;
+  justify-content: space-around;
+}
+#container #main #left .first div > i {
+  padding: 10px;
+  border: 1px solid rgb(115, 124, 124);
+  color: rgb(115, 124, 124);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#container #main #left .first div > i:hover {
+  background-color: rgb(238, 239, 239);
+}
+#container #main #left .first div > i:active {
+  color: white;
+  background-color: rgb(32, 128, 224);
+}
+#container #main #right {
+  width: 700px;
+  height: 350px;
+}
+#container #footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+#container #footer .reset, #container #footer #behind .save, #container #footer #behind .file {
+  padding: 13px 8px;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  font-weight: 0;
+  border: 0.5px solid darkslategrey;
+  color: rgb(94, 95, 95);
+  transition: all 0.5s ease;
+}
+#container #footer .reset:hover, #container #footer #behind .save:hover, #container #footer #behind .file:hover {
+  color: white;
+  background-color: rgb(43, 49, 49);
+}
+#container #footer .reset:active, #container #footer #behind .save:active, #container #footer #behind .file:active {
+  transform: scale(0.97);
+}
+#container #footer #behind {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5%;
+}
+#container #footer #behind .file {
+  color: white;
+  background-color: rgb(85, 95, 95);
+}
+#container #footer #behind .save {
+  color: white;
+  background-color: rgba(53, 137, 226, 0.8);
+  border: none;
+  font-size: 16px;
+}
+#container #footer #behind .save:hover {
+  color: white;
+  background-color: rgb(35, 91, 151);
+}
+
+.active {
+  border-radius: 10px;
+  background-color: rgb(248, 246, 246);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disable {
+  opacity: 0.6;
+  pointer-events: none;
+}/*# sourceMappingURL=style.css.map */

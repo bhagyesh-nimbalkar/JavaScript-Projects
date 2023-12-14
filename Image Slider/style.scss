@@ -1,0 +1,73 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+}
+#container{
+       width:100vw;
+       height:100vh;
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       #prev{
+        width:50px;
+        height:50px;
+        border-radius:50%;
+        position:absolute;
+        text-align:center;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        left:13%;
+        z-index:3;
+        background-color:rgba(0,0,0,1);
+        color:white;
+        font-size:25px;
+        &:hover{
+                  background-color:rgba(0,0,0,0.8);
+        }
+       }
+       #next{
+           @extend #prev;
+           left:83.5%;
+       }
+       #modal{
+              width:100%;
+              margin:0px 15%;
+              height:500px;
+              display:grid;
+              grid-template-columns:repeat(10,1fr) 10fr;
+              gap:1%;
+              overflow-y:hidden;
+              overflow-x:hidden;
+              transition:all 0.5s ease;
+              scroll-behavior:smooth;
+              &::-webkit-scrollbar{
+                height:5px;
+                scrollbar-shadow-color:5px 5px 10px 15px black;
+                scroll-behavior:smooth;
+                cursor:pointer;
+                &:hover{
+                      height:10px;
+                }
+           }
+           &::-webkit-scrollbar-track{
+                background-color:rgb(215, 214, 214);
+                border-radius:30px;
+           }
+           &::-webkit-scrollbar-thumb{
+                    background-color:black;
+                    border-radius:30px;
+           }
+       }
+
+       img{
+               background-size:cover;
+               width:400px;
+               height:600px;
+               scroll-snap-align: start;
+               scroll-margin: 20px;
+       }
+
+}

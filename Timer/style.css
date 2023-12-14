@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+}
+
+#container {
+  width: 500px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#container #sub {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+#container #sub .show {
+  width: 250px;
+  font-size: 50px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.1s ease-in-out;
+}
+#container #btns {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  align-items: center;
+}
+#container #btns .btn {
+  outline: none;
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+#container #btns .btn:hover {
+  background-color: rgb(237, 66, 4);
+}
+#container #btns .btn:active {
+  transform: scale(0.97);
+}/*# sourceMappingURL=style.css.map */

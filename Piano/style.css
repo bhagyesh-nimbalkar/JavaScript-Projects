@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 600px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 2%;
+}
+#container #wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#container #wrapper #upper {
+  width: 100%;
+  height: 25%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2%;
+}
+#container #wrapper #upper #header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  color: white;
+}
+#container #wrapper #upper #volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  outline: none;
+  border: none;
+}
+#container #wrapper #upper #volume span {
+  color: white;
+}
+#container #wrapper #upper #volume input {
+  accent-color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+#container #wrapper #upper #toggle {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 4%;
+}
+#container #wrapper #upper #toggle .btn {
+  width: 40px;
+  height: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 5px;
+  background-color: rgb(112, 116, 120);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#container #wrapper #upper #toggle #ball {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+#container #wrapper #upper #toggle #ball.change {
+  transform: translateX(145%);
+  background-color: black;
+}
+#container #wrapper #upper #toggle .btn.active {
+  background-color: white;
+}
+#container #wrapper #lower {
+  width: 100%;
+  height: 75%;
+}
+#container #wrapper #lower #keys {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#container #wrapper #lower #keys .key {
+  list-style-type: none;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
+  transform-origin: top;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#container #wrapper #lower #keys .key:active {
+  transform: scale(0.99);
+}
+#container #wrapper #lower #keys .key.shrink {
+  transform: scale(0.99);
+}
+#container #wrapper #lower #keys .white {
+  width: 70px;
+  height: 230px;
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+#container #wrapper #lower #keys .black {
+  width: 44px;
+  height: 140px;
+  margin: 0px -20px 0px -20px;
+  box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.1);
+  border-radius: 0px 0px 5px 5px;
+  background: linear-gradient(to bottom left, black, rgb(82, 81, 81) 100%);
+  z-index: 1;
+}
+#container #wrapper #lower #keys .key span {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+}
+#container #wrapper #lower #keys .key span.change {
+  display: none;
+}
+#container #wrapper #lower #keys .black span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (max-width: 600px) {
+  #container {
+    width: 500px;
+    height: 300px;
+  }
+  #container #wrapper #lower #keys .white {
+    width: 70px;
+    height: 200px;
+  }
+  #container #wrapper #lower #keys .black {
+    width: 30px;
+    height: 100px;
+    margin: 0px -25px 0px -25px;
+    transform: translateX(-10px);
+  }
+}
+@media only screen and (max-width: 500px) {
+  #container {
+    width: 400px;
+    height: 200px;
+  }
+  #container #wrapper #upper #header h2 {
+    font-size: 10px;
+  }
+  #container #wrapper #upper #volume {
+    transform: scale(0.8);
+  }
+  #container #wrapper #upper #toggle {
+    transform: scale(0.7);
+  }
+  #container #wrapper #lower #keys .white {
+    width: 50px;
+    height: 130px;
+  }
+  #container #wrapper #lower #keys .black {
+    width: 20px;
+    height: 70px;
+    margin: 0px -15px 0px -15px;
+    transform: translateX(-3px);
+  }
+}
+@media only screen and (max-width: 400px) {
+  #container {
+    width: 300px;
+    height: 200px;
+  }
+  #container #wrapper #upper #header h2 {
+    font-size: 8px;
+  }
+  #container #wrapper #upper #volume {
+    transform: scale(0.6);
+  }
+  #container #wrapper #upper #toggle {
+    transform: scale(0.6) translateX(-40px);
+  }
+  #container #wrapper #lower #keys .white {
+    width: 50px;
+    height: 120px;
+  }
+  #container #wrapper #lower #keys .black {
+    width: 20px;
+    height: 60px;
+    margin: 0px -20px 0px -20px;
+    transform: translateX(-8px);
+  }
+}
+@media only screen and (max-width: 300px) {
+  #container {
+    width: 200px;
+    height: 150px;
+  }
+}/*# sourceMappingURL=style.css.map */

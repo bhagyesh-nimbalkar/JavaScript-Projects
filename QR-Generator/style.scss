@@ -1,0 +1,87 @@
+@import url("https://www.google.com/fonts/specimen/Lato");
+*{
+     font-family:"Lato",sans-serif;
+     box-sizing:border-box;
+     padding:0;
+     margin:0;
+}
+body{
+      width:100vw;
+      height:100vh;
+      background:linear-gradient(to bottom ,rgb(63, 163, 239) 12%,rgb(28, 84, 124) 99%);
+      background-repeat: no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      #container{
+             background-color:white;
+             padding:4%;
+             border-radius:20px;
+             box-shadow:15px 5px 15px rgba(0,0,0,0.5);
+             transition:all 0.5s ease;
+             #modal{
+                   display:flex;
+                   flex-direction:column;
+                   flex-wrap:wrap;
+                   transition:all 0.5s ease;
+                   .heading{
+                          width:100%;
+                          margin-bottom:10px;
+                          text-align:center;
+                   }
+                   .sub-heading{
+                          width: 100%;
+                          color:rgb(122, 122, 122);
+                          margin-bottom:10px;
+                   }
+                   .url{
+                         padding:10px;
+                         border-radius:10px;
+                         outline:none;
+                         border:2px solid grey;
+                         margin-bottom:10px;
+                         font-size:16px;
+                   }
+                   .btn{
+                         padding:10px;
+                         color:white;
+                         background-color:rgb(63, 163, 239);
+                         font-size:larger;
+                         border-radius:10px;
+                         outline:none;
+                         border:none;
+                         cursor:pointer;
+                         margin-bottom:10px;
+                         &:active{
+                              transform:scale(0.99);
+                         }
+                         &:disabled{
+                            background-color:rgba(63, 163, 239,0.3);
+                            pointer-events:none;
+                         }
+                   }
+                   #generate{
+                          padding:10px;
+                          border-radius:10px;
+                          height:0px;
+                          transition:all 0.5s ease-in-out;
+                          transform-origin:bottom;
+                   }
+                   #generate.active{
+                           height:100%;
+                           border:2px solid grey;
+                   }
+                   .qr{
+                       width:300px;
+                       height:0px;
+                       transition:all 0.5s ease;
+                       transform-origin:bottom;
+                   }
+                   .qr.active{
+                       width:300px;
+                       height:300px;
+                   }
+             }
+
+      }
+}

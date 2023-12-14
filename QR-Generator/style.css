@@ -1,0 +1,87 @@
+@import url("https://www.google.com/fonts/specimen/Lato");
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgb(63, 163, 239) 12%, rgb(28, 84, 124) 99%);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #container {
+  background-color: white;
+  padding: 4%;
+  border-radius: 20px;
+  box-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+body #container #modal {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  transition: all 0.5s ease;
+}
+body #container #modal .heading {
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+body #container #modal .sub-heading {
+  width: 100%;
+  color: rgb(122, 122, 122);
+  margin-bottom: 10px;
+}
+body #container #modal .url {
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid grey;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+body #container #modal .btn {
+  padding: 10px;
+  color: white;
+  background-color: rgb(63, 163, 239);
+  font-size: larger;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+body #container #modal .btn:active {
+  transform: scale(0.99);
+}
+body #container #modal .btn:disabled {
+  background-color: rgba(63, 163, 239, 0.3);
+  pointer-events: none;
+}
+body #container #modal #generate {
+  padding: 10px;
+  border-radius: 10px;
+  height: 0px;
+  transition: all 0.5s ease-in-out;
+  transform-origin: bottom;
+}
+body #container #modal #generate.active {
+  height: 100%;
+  border: 2px solid grey;
+}
+body #container #modal .qr {
+  width: 300px;
+  height: 0px;
+  transition: all 0.5s ease;
+  transform-origin: bottom;
+}
+body #container #modal .qr.active {
+  width: 300px;
+  height: 300px;
+}/*# sourceMappingURL=style.css.map */

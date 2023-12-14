@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+</head>
+<body>
+        <div id="parent">
+             <p>hello</p>
+             <p>hello</p>
+             <p>hello</p>
+             <p>hello</p>
+             <p>hello</p>
+             <p>hello</p>
+        </div>
+</body>
+<script>
+        let x = document.querySelector("#parent>p");
+        while(x!=null)
+        {
+             x.nodeValue="Bye";
+             x=x.nextSibling;
+        }
+</script>
+</html>

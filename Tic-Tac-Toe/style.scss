@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+*{
+      box-sizing:border-box;
+      padding:0;
+      margin:0;
+      font-family:"Poppins",sans-serif;
+}
+body{
+      height:100vh;
+      width:100vw;
+      background:linear-gradient(to bottom,skyblue 10%,rgb(20, 120, 159) 80%);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+}
+#modal{
+        display:none;
+        flex-direction:column;
+        flex-wrap:wrap;
+        gap:5%;
+        background-color:white;
+        padding:10px 40px;
+        border-radius:10px;
+        box-shadow:2px 5px 15px rgba(0,0,0,0.3);
+        header{ 
+               font-size:25px;
+               margin-bottom:10px;
+        }
+        p{
+              margin-top:10px;
+              margin-bottom:20px;
+              font-size:20px;
+              font-weight:500;
+        }
+        #grp-btn{
+              display:flex;
+              justify-content:center;
+              gap:10%;
+              .btn{
+                     padding:5px 20px;
+                     border-radius:10px;
+                     border:none;
+                     outline:none;
+                     font-size:15px;
+                     background-color:rgb(0, 149, 255);
+                     color:white;
+                     font-weight:900;
+                     cursor:pointer;
+                     &:hover{
+                          transform:scale(1.03);
+                     }
+              }
+        }
+
+}
+#modal.active{
+        display:flex;
+}
+
+#arena{
+       display:none;
+       width:max-content;
+       height:max-content;
+       justify-content:center;
+       align-items:center;
+       gap:20px;
+       #upper{
+              padding:15px;
+              display:flex;
+              flex-wrap:wrap;
+              justify-content:center;
+              align-self:center;
+              gap:20px;
+              border-radius:10px;
+              background-color:white;
+              .c_btn{
+                      width:100%;
+                      outline:none;
+                      border:none;
+                      background-color:transparent;
+                      font-size:16px;
+                      font-weight:900;
+                      padding:20px 0px;
+                      border-radius:20px;
+                      text-align:center;
+                      transition:all .5s ease;
+              }
+              .c_btn.active{
+                     background-color:rgb(0, 149, 255);
+                     color:white;  
+              }
+}
+#container{
+       width:auto;
+       height:auto;
+       display:grid;
+       grid-template-columns:1fr 1fr 1fr;
+       pointer-events:all;
+       gap:3%;
+       .box{
+               height:80px;
+               width:80px;
+               background-color:white;
+               box-shadow:3px 15px 10px rgba(0,0,0,0.1);
+               border-radius:5px;
+               display:flex;
+               justify-content:center;
+               align-items:center;
+               cursor:pointer;
+               transition:all 0.1s ease;
+               i{
+                    font-size:35px;
+                    color:rgb(0, 149, 255);
+               }
+               &:hover{
+                   transform:scale(1.02);
+               }
+               &:active{
+                   transform:scale(0.99);
+               }
+       }
+       .box.error{
+             animation:shake 0.3s 1 ease-in-out;
+             i{
+                   color:red;
+             }
+       }
+}
+#container.block{
+        pointer-events:none;
+}
+
+}
+#arena.active{
+      display:flex;
+}
+@keyframes shake{
+      20%{
+           transform:translateX(10px);
+      }
+      40%{
+           transform:translateX(-10px);
+      }
+      60%{
+            transform:translateX(10px);
+      }
+      80%{
+            transform:translateX(-10px); 
+      }
+      100%{
+             transform:translateX(0px);
+      }
+}
+#res{
+         display:none;
+         flex-direction:column;
+         align-items:center;
+         gap:20px;
+         padding:20px;
+         border-radius:10px;
+         background-color:white;
+         button{
+                border:none;
+                outline:none;
+                background-color:rgb(58, 91, 162);
+                border-radius:10px;
+                padding:10px;
+                color:white;
+                font-size:20px;
+                font-weight:700;
+                cursor:pointer;
+                &:hover{
+                     transform:scale(1.05);
+                }
+                &:active{
+                    transform:scale(0.98);
+                }
+         }
+}
+#res.active{
+        display:flex;
+}

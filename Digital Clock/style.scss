@@ -1,0 +1,26 @@
+#container{
+        display:flex;
+        flex-wrap:wrap;
+        position:relative;
+        gap:5%;
+        box-sizing:border-box;
+        background-color:black;
+        text-align:center;
+        color:white;
+        justify-content:center;
+        align-items:center;
+        border-radius:5px;
+        box-shadow:0px 0px 40px rgb(203, 200, 200);
+        h1{
+            font-size:40px;
+            border:3px solid white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:2px 2px 20px white;
+        }
+}
+
+span{
+       font-size:40px;
+       font-weight:900;
+}

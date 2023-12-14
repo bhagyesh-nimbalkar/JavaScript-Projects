@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="container">
+          <h2>Image Editor</h2>
+          <div id="main">
+             <div id="left" class="disable">
+                <div class="first">
+                    <div>
+                       <h4>Filters</h4>
+                       <div id="box">
+                          <div >Brightness</div>
+                          <div>Saturation</div>
+                          <div>Inversion</div>
+                          <div>Grayscale</div>
+                       </div>
+                    </div>
+                    <div class="gap">
+                        <div class="break">
+                         <h5>Brightness</h5>
+                         <span>100%</span>
+                         </div>
+                         <input type="range" min="0" max="200" >
+
+                    </div>
+                </div>
+                <div class="first">
+                    <h4>Rotate & Flip</h4>
+                    <div class="icn">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <i class="fa-solid fa-rotate-left fa-flip-horizontal"></i>
+                        <i class='bx bx-reflect-vertical'></i>
+                        <i class='bx bx-reflect-horizontal'></i>
+                    </div>
+                </div>
+             </div>
+             <div id="right" class="active">
+               <img src="/home/bhagyesh/Documents/Vs Code/image-01_generated.jpg" width="100px" height="100px" alt="Image Here" class="main-img">
+             </div>
+          </div>
+          <div id="footer">
+               <div type="button" class="reset disable">reset filters</div>
+               <div id="behind">
+                    <input type="file" id='img' style="display:none;">
+                    <label for="img" class="file" >choose image</label>
+                    <button type="button" class="save disable">save image</button>
+               </div>
+          </div>
+    </div>
+   <script src="script.js"></script>
+</body>
+</html>
