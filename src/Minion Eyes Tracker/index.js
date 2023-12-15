@@ -17,12 +17,9 @@ const FindPosition = (e,outEye,x)=>{
       let dx = mouseX-eyeX;   
 
       let angle = Math.atan2(mouseY-eyeY,mouseX-eyeX); // Angle between two points
-
       let r = Math.min(x,Math.hypot(dy,dx)); // Radius of the movement
-
       let offsetX = Math.cos(angle)*r;  // Finding the co-ordintes
       let offsetY = Math.sin(angle)*r;
-
       outEye.style.transform= `translate(${offsetX}px,${offsetY}px)`; 
 }
 page.addEventListener('mousemove',(e)=>{
