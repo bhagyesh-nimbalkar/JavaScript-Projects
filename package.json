@@ -1,19 +1,5 @@
 {
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "typescript": "^5.3.3",
-    "xhr2": "^0.2.1"
-  },
-  "name": "javascript",
-  "version": "1.0.0",
-  "main": "AJAX.js",
-  "devDependencies": {
-    "tailwindcss": "^3.3.6"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "tailwindcss": "^3.3.5"
+  }
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minion Eye Tracker</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <style>
+          .blink{
+               animation:blink 0.3s 2  ease alternate;
+          }
+          @keyframes blink{
+               50%{
+                     height:0%;
+               }
+          }
+    </style>
+</head>
+<body class="page w-screen h-screen justify-center flex items-center bg-yellow-500">
+     <div class="w-full absolute h-[60px]  bg-slate-700"></div>
+     <div class="w-[400px]  flex justify-evenly absolute bg-stone-400 h-[90px] ">
+        <div class="flex justify-center items-center h-[150px] w-[150px] bg-stone-400 rounded-full translate-y-[-30px]">
+             <div class="outer flex justify-center items-center w-[85%] h-[85%] bg-white rounded-full">
+                <div class="eye1 flex justify-center items-center w-[35%] h-[35%] bg-amber-700 rounded-full">
+                    <div class="inner flex justify-center items-center w-[50%] h-[50%] bg-amber-950 rounded-full">
+                        <div class="eye2 flex justify-center items-center w-[30%] h-[30%] bg-white rounded-full"></div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="flex justify-center items-center h-[150px] w-[150px] bg-stone-400 rounded-full translate-y-[-30px]">
+            <div class="flex justify-center items-center w-[85%] h-[85%] bg-white rounded-full">
+                <div class="eye1 flex justify-center items-center w-[35%] h-[35%] bg-amber-700 rounded-full">
+                    <div class="flex justify-center items-center w-[50%] h-[50%] bg-amber-950 rounded-full">
+                        <div class="eye2 flex justify-center items-center w-[30%] h-[30%] bg-white rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+     <script src="index.js"></script>
+</body>
+</html>
